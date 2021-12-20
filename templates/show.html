@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Records</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+
+<style>
+    .container0 {
+       background-color: rgb(235, 130, 31);
+       background-size: auto;
+       
+        
+        
+    }
+
+    .container1 {
+        align-items: center;
+        width: 45%;
+        margin-top: 5%;
+        margin-left: 30%;
+        margin-right: 20%;
+        border-color: black;
+        background-size: 100%;
+        background-color: aqua;;
+        color: rgb(43, 40, 40);
+    }
+    
+</style>
+
+
+<div class="container0">
+    <br>
+    <br>
+    <br>
+    
+<body>
+    
+    <div class="container1">
+        <table class="tadle">
+            <thead class="thead-dark">
+                <tr>
+                    <th><h3><center>Employee ID</center></h3></th>
+                    <th><h3><center>Employee Name</center></h3></th>
+                    <th><h3><center>Employee Email</center></h3></th>
+                    <th><h3><center>Employee Contact</center></h3></th>
+                    <th><h3><center>Actions</center></h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                <tr>
+                    <td><center>{{ employee.eid }}</center></td>
+                    <td><center>{{ employee.ename }}</center></td>
+                    <td><center>{{ employee.eemail }}</center></td>
+                    <td><center>{{ employee.econtact }}</center></td>
+                    <td>
+                        
+                        <button type="button" class="btn btn-primary"><a href="/edit/{{ employee.id }}"><span class="glyphicon glyphicon-pencil"><h4><center>Edit</center></h4></span></a></button>
+                        <button type="button" class="btn btn-danger" ><a href="/delete/{{ employee.id }}"><h4><center>Delete</center></h4></a></button>
+                   
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    <br>
+    <br>
+
+    <center><button type="button" class="btn btn-success" color="green"><a href="/emp" class="btn btn-primary"><h3><center>Add New Record</center></h3></a></button></center>
+
+    <br><br>
+</div>
+</body>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
+
+</html>
